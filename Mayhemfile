@@ -1,0 +1,11 @@
+project: hipify
+target: hipify
+image: ghcr.io/rnshah9/playground:hipify
+testsuite:
+  - file://tests/unit_tests/samples/intro.cu
+
+cmds:
+  - cmd: /repo/build/hipify-clang @@
+    env:
+      DISABLE_SMOKETEST: '1'
+    timeout: 5
